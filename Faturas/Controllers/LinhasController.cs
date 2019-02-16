@@ -25,7 +25,7 @@ namespace Faturas.Controllers
 
         }
 
-        [HttpGet("api/faturas/{FaturaId}/linhas")]
+        [HttpGet("api/fatura/{FaturaId}/linha")]
         public IActionResult ObterLinhasDaFatura(Guid FaturaId)
         {
             var linhasdefaturarepo = _repo.ListasLinhasFatura(FaturaId);

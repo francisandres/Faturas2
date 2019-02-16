@@ -17,6 +17,9 @@ namespace Faturas.Entidades
         public virtual Cliente Cliente { get; set; }
         
         public Guid ClienteId { get; set; }
+        
+        public string EstadodaFatura { get; set; }
+        public string Nome { get; set; }
 
        
         public decimal TotalFatura { get; set; }

@@ -15,7 +15,7 @@ using Newtonsoft.Json.Linq;
 namespace Faturas.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Faturas")]
+    [Route("api/fatura")]
     public class FaturasController : Controller
     {
         private readonly IFaturasRepositorio _repo;

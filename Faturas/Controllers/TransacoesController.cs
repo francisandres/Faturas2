@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Faturas.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Transacoes")]
+    [Route("api/transacao")]
     public class TransacoesController : Controller
     {
 

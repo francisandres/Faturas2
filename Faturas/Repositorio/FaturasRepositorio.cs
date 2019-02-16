@@ -27,9 +27,9 @@ namespace Faturas.Repositorio
         {
             if (_ctx.Clientes.Count() == 0)
             {
-                _ctx.Clientes.Add(new Cliente { Primeiro_nome = "Francisco",
-                                                Ultimo_nome = "André",
-                                                Email="francisco.andre@gesprin.co.ao"});
+                _ctx.Clientes.Add(new Cliente { Primeiro_nome = "Cliente",
+                                                Ultimo_nome = "Indiferenciado",
+                                                Email="no-email@noemail.com"});
                 _ctx.SaveChanges();
             }
             return _ctx.Clientes.ToList();
@@ -88,6 +88,7 @@ namespace Faturas.Repositorio
                         {
                             TotalFatura = 25000,
                             ValorPago = 15000,
+                            Nome = "Cliente Indiferenciado",
                             Linha = new Linha[]{new Linha
                             {
                                 PrecoVenda = 25000,
@@ -129,6 +130,7 @@ namespace Faturas.Repositorio
             cli = _ctx.Clientes.Find(fatura.ClienteId);
             cli.Saldo = cli.Saldo - fatura.TotalFatura;
             fatura.Cliente = cli;
+            fatura.EstadodaFatura = "Por Pagar!";
             _ctx.Faturas.Add(fatura);
             if(fatura.Linha.Any())
             {
@@ -178,12 +180,65 @@ namespace Faturas.Repositorio
 
             _ctx.Transacoes.Add(trans);
 
-            Cliente cli = new Cliente();
+            Cliente cli;
             cli = _ctx.Clientes.Find(pagamento.ClienteId);
             cli.Saldo = cli.Saldo + pagamento.ValorPago;
+            Banco bank = _ctx.Bancos.Find(pagamento.bancoId);
+            bank.saldo = bank.saldo + pagamento.ValorPago;
+            if(pagamento.FaturaId != null){
+               Fatura fat =  _ctx.Faturas.Find(pagamento.FaturaId);
+               fat.ValorPago = fat.ValorPago + pagamento.ValorPago;
+            }
 
             _ctx.Pagamentos.Add(pagamento);
             _ctx.SaveChanges();
         }
+
+        public IEnumerable<Banco> ListarBancos()
+        {
+            return _ctx.Bancos.ToList();
+        }
+
+        public Banco ObterBancoPorId(Guid id)
+        {
+            return _ctx.Bancos.Find(id);
+        }
+
+        public void AddBanco(Banco banco)
+        {
+            _ctx.Bancos.Add(banco);
+            _ctx.SaveChanges();
+        }
+
+        public IEnumerable<ContaBancaria> ListarContasBancarias(){
+            return _ctx.ContasBancarias.ToList();
+        }
+
+        public ContaBancaria ObterContaBancariaPorId(Guid id){
+            return _ctx.ContasBancarias.Find(id);
+        }
+
+        public void AddConta(ContaBancaria contabank)
+        {
+            _ctx.ContasBancarias.Add(contabank);
+            _ctx.SaveChanges();
+        }
+
+        public IEnumerable<ContaBancaria> ListarContasNoBanco(Guid id)
+        {
+            return _ctx.ContasBancarias.Where(i => i.bancoId ==id).ToList();
+        }
+
+        public IEnumerable<MovimentoBancario> ListarMovimentosBancarios(){
+            return _ctx.MovimentosBancarios.ToList();
+        }
+
+        public MovimentoBancario ObterMovimentoBancarioPorId(Guid id){
+            return _ctx.MovimentosBancarios.Find(id);
+        }
+        public void AddMovimentoBancario(MovimentoBancario movbank){
+            _ctx.MovimentosBancarios.Add(movbank);
+        }
+
     }
 }

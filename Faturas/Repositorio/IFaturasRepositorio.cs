@@ -29,5 +29,19 @@ namespace Faturas.Repositorio
         IEnumerable<Pagamento> ListarPagamentos();
         Pagamento ObterPagamento(Guid id);
         void AddPagamento(Pagamento pagamento);
+
+        IEnumerable<Banco> ListarBancos();
+
+        Banco ObterBancoPorId(Guid id);
+        void AddBanco(Banco banco);
+
+        IEnumerable<ContaBancaria> ListarContasBancarias();
+        ContaBancaria ObterContaBancariaPorId(Guid id);
+        void AddConta(ContaBancaria contabank);
+        IEnumerable<ContaBancaria> ListarContasNoBanco(Guid id);
+
+        IEnumerable<MovimentoBancario> ListarMovimentosBancarios();
+        MovimentoBancario ObterMovimentoBancarioPorId(Guid id);
+        void AddMovimentoBancario(MovimentoBancario movbank);
     }
 }

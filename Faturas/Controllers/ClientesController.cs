@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Faturas.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Clientes")]
+    [Route("api/cliente")]
     public class ClientesController : ControllerBase
     {
         private readonly IFaturasRepositorio _repo;
@@ -60,10 +60,11 @@ namespace Faturas.Controllers
             }
 
             _repo.AddCliente(cliente);
+            var cli = Mapper.Map<ClienteDTO>(cliente);
             return CreatedAtRoute(
                   "ObterClientePorId",
-                  new { id = cliente.ClienteId },
-                  cliente);
+                  new { id = cli.ClienteId },
+                  cli);
         }
 
 

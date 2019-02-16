@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Faturas.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Pagamentos")]
+    [Route("api/pagamento")]
     public class PagamentosController : Controller
     {
         private IFaturasRepositorio _repo;
@@ -55,10 +55,11 @@ namespace Faturas.Controllers
             }
 
             _repo.AddPagamento(pagamento);
+            var pag = Mapper.Map<PagamentoDTO>(pagamento);
             return CreatedAtRoute(
                   "ObterPagamentoPorId",
-                  new { id = pagamento.PagamentoId },
-                  pagamento);
+                  new { id = pag.PagamentoId },
+                  pag);
         }
     }
 }

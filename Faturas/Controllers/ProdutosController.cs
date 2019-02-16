@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Faturas.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Produtos")]
+    [Route("api/produto")]
     public class ProdutosController : Controller
     {
         private readonly IFaturasRepositorio _repo;

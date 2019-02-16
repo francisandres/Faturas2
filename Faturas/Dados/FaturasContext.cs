@@ -18,6 +18,9 @@ namespace Faturas.Data
         public DbSet<Linha> Linhas { get; set; }
         public DbSet<Transacao> Transacoes { get; set; }
         public DbSet<Pagamento> Pagamentos { get; set; }
+        public DbSet<MovimentoBancario> MovimentosBancarios {get; set;}
+        public DbSet<Banco> Bancos { get; set; }
+        public DbSet<ContaBancaria> ContasBancarias { get; set; }
 
   
 

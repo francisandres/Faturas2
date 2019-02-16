@@ -59,6 +59,9 @@ namespace Faturas
                 cfg.CreateMap<Entidades.Fatura, Models.FaturaDTO>();
                 cfg.CreateMap<Entidades.Transacao, Models.TransacaoDTO>();
                 cfg.CreateMap<Entidades.Pagamento, Models.PagamentoDTO>();
+                cfg.CreateMap<Entidades.Banco, Models.BancoDTO>();
+                cfg.CreateMap<Entidades.ContaBancaria, Models.ContaBancariaDTO>();
+                cfg.CreateMap<Entidades.MovimentoBancario, Models.MovimentoBancarioDTO>();
             });
 
             app.UseCors(c => c.WithOrigins("http://localhost:4200").AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()           

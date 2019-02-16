@@ -10,6 +10,7 @@ namespace Faturas.Models
         public Guid PagamentoId { get; set; }
         public string TipoPagamento { get; set; }
         public decimal ValorPago { get; set; }
+        public Guid bancoId { get; set; }
 
         public Guid FaturaId { get; set; }
 

@@ -19,6 +19,7 @@ namespace Faturas.Entidades
 
         public virtual Cliente Cliente { get; set; }
         public Guid ClienteId { get; set; }
+        public Guid bancoId { get; set; }
 
         public virtual Transacao Transacao { get; set; }
         [ForeignKey("Transacao")]

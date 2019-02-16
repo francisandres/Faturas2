@@ -12,8 +12,10 @@ namespace Faturas.Models
         public Guid ClienteId { get; set; }
 
         public string Nome { get; set; }
+        public string EstadodaFatura { get; set; }
         public decimal TotalFatura { get; set; }
         public decimal ValorPago { get; set; }
+       
        
        
     }
