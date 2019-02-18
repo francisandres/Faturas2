@@ -15,6 +15,7 @@ namespace Faturas.Models
         public string EstadodaFatura { get; set; }
         public decimal TotalFatura { get; set; }
         public decimal ValorPago { get; set; }
+        public ICollection<LinhaDTO> LinhaDTO { get; set; }
        
        
        

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Faturas.Data;
+using Faturas.Models;
 using Faturas.Repositorio;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -56,12 +58,16 @@ namespace Faturas
                 cfg.CreateMap<Entidades.Cliente, Models.ClienteDTO>();
                 cfg.CreateMap<Entidades.Produto, Models.ProdutoDTO>();
                 cfg.CreateMap<Entidades.Linha, Models.LinhaDTO>();
-                cfg.CreateMap<Entidades.Fatura, Models.FaturaDTO>();
+                cfg.CreateMap<Entidades.Fatura, Models.FaturaDTO>().ForMember(m => m.LinhaDTO, opt => opt.MapFrom(src =>  Mapper.Map<IEnumerable<LinhaDTO>>(src.Linha) ));
+
+
                 cfg.CreateMap<Entidades.Transacao, Models.TransacaoDTO>();
                 cfg.CreateMap<Entidades.Pagamento, Models.PagamentoDTO>();
                 cfg.CreateMap<Entidades.Banco, Models.BancoDTO>();
                 cfg.CreateMap<Entidades.ContaBancaria, Models.ContaBancariaDTO>();
                 cfg.CreateMap<Entidades.MovimentoBancario, Models.MovimentoBancarioDTO>();
+                cfg.CreateMap<Entidades.ReceitaOrcamento, Models.ReceitaOrcamentoDTO>();
+
             });
 
             app.UseCors(c => c.WithOrigins("http://localhost:4200").AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()           

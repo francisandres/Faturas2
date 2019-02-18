@@ -61,7 +61,7 @@ namespace Faturas.Controllers
 
             _repo.AddFatura(p);
 
-            var fat = Mapper.Map<FaturaDTO>(p);
+            FaturaDTO fat = Mapper.Map<FaturaDTO>(p);
              return CreatedAtRoute(
                    "ObterFaturaPorId",
                    new { id = fat.ClienteId },

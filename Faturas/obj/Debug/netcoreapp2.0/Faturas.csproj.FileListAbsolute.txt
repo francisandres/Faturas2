@@ -9,14 +9,14 @@ C:/Users/Francisco D André/Downloads/Faturas-master/Faturas/obj/Debug/netcoreap
 C:/Users/Francisco D André/Downloads/Faturas-master/Faturas/obj/Debug/netcoreapp2.0/Faturas.dll
 C:/Users/Francisco D André/Downloads/Faturas-master/Faturas/obj/Debug/netcoreapp2.0/Faturas.pdb
 C:/Users/Francisco D André/Downloads/Faturas-master/Faturas/obj/Debug/netcoreapp2.0/Faturas.csprojAssemblyReference.cache
-/projectos/Faturas2/Faturas/bin/Debug/netcoreapp2.0/Faturas.deps.json
-/projectos/Faturas2/Faturas/bin/Debug/netcoreapp2.0/Faturas.runtimeconfig.json
-/projectos/Faturas2/Faturas/bin/Debug/netcoreapp2.0/Faturas.runtimeconfig.dev.json
-/projectos/Faturas2/Faturas/bin/Debug/netcoreapp2.0/Faturas.dll
-/projectos/Faturas2/Faturas/bin/Debug/netcoreapp2.0/Faturas.pdb
-/projectos/Faturas2/Faturas/obj/Debug/netcoreapp2.0/Faturas.csprojAssemblyReference.cache
-/projectos/Faturas2/Faturas/obj/Debug/netcoreapp2.0/Faturas.csproj.CoreCompileInputs.cache
-/projectos/Faturas2/Faturas/obj/Debug/netcoreapp2.0/Faturas.AssemblyInfoInputs.cache
-/projectos/Faturas2/Faturas/obj/Debug/netcoreapp2.0/Faturas.AssemblyInfo.cs
-/projectos/Faturas2/Faturas/obj/Debug/netcoreapp2.0/Faturas.dll
-/projectos/Faturas2/Faturas/obj/Debug/netcoreapp2.0/Faturas.pdb
+C:\Projectos\Faturas2\Faturas\bin\Debug\netcoreapp2.0\Faturas.deps.json
+C:\Projectos\Faturas2\Faturas\bin\Debug\netcoreapp2.0\Faturas.runtimeconfig.json
+C:\Projectos\Faturas2\Faturas\bin\Debug\netcoreapp2.0\Faturas.runtimeconfig.dev.json
+C:\Projectos\Faturas2\Faturas\bin\Debug\netcoreapp2.0\Faturas.dll
+C:\Projectos\Faturas2\Faturas\bin\Debug\netcoreapp2.0\Faturas.pdb
+C:\Projectos\Faturas2\Faturas\obj\Debug\netcoreapp2.0\Faturas.csproj.CoreCompileInputs.cache
+C:\Projectos\Faturas2\Faturas\obj\Debug\netcoreapp2.0\Faturas.AssemblyInfoInputs.cache
+C:\Projectos\Faturas2\Faturas\obj\Debug\netcoreapp2.0\Faturas.AssemblyInfo.cs
+C:\Projectos\Faturas2\Faturas\obj\Debug\netcoreapp2.0\Faturas.dll
+C:\Projectos\Faturas2\Faturas\obj\Debug\netcoreapp2.0\Faturas.pdb
+C:\Projectos\Faturas2\Faturas\obj\Debug\netcoreapp2.0\Faturas.csprojAssemblyReference.cache
