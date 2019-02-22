@@ -86,18 +86,18 @@ namespace Faturas.Repositorio
                 _ctx.Faturas.Add(
                         new Fatura
                         {
-                            TotalFatura = 25000,
-                            ValorPago = 15000,
-                            Nome = "Cliente Indiferenciado",
+                            totalFatura = 25000,
+                            valorPago = 15000,
+                            nome = "Cliente Indiferenciado",
                             Linha = new Linha[]{new Linha
                             {
-                                PrecoVenda = 25000,
-                                Quantidade = 7
+                                precoVenda = 25000,
+                                quantidade = 7
                             },
                             new Linha
                             {
-                                PrecoVenda=35000,
-                                Quantidade=5
+                                precoVenda=35000,
+                                quantidade=5
                             }
                                                }
                         }
@@ -118,25 +118,25 @@ namespace Faturas.Repositorio
         {
 
             Transacao trans = new Transacao();
-            trans.Cliente = _ctx.Clientes.Find(fatura.ClienteId);
-            trans.ClienteId = fatura.ClienteId;
+            trans.Cliente = _ctx.Clientes.Find(fatura.clienteId);
+            trans.ClienteId = fatura.clienteId;
             trans.Fatura = fatura;
-            trans.FaturaId = fatura.FaturaId;
+            trans.FaturaId = fatura.faturaId;
             trans.Tipo_transacao = "débito";
-            trans.Valor_transacao = fatura.TotalFatura;
+            trans.Valor_transacao = fatura.totalFatura;
             _ctx.Transacoes.Add(trans);
 
             Cliente cli;
-            cli = _ctx.Clientes.Find(fatura.ClienteId);
-            cli.Saldo = cli.Saldo - fatura.TotalFatura;
-            fatura.Cliente = cli;
-            fatura.EstadodaFatura = "Por Pagar!";
+            cli = _ctx.Clientes.Find(fatura.clienteId);
+            cli.Saldo = cli.Saldo - fatura.totalFatura;
+            fatura.cliente = cli;
+            fatura.estadoDaFatura = "Por Pagar!";
             _ctx.Faturas.Add(fatura);
             if(fatura.Linha.Any())
             {
                 foreach(var linha in fatura.Linha)
                 {
-                    _ctx.Produtos.Find(linha.ProdutoId).Stock = _ctx.Produtos.Find(linha.ProdutoId).Stock - linha.Quantidade;
+                    _ctx.Produtos.Find(linha.produtoId).Stock = _ctx.Produtos.Find(linha.produtoId).Stock - linha.quantidade;
                 }
             }
             _ctx.SaveChanges();
@@ -145,7 +145,7 @@ namespace Faturas.Repositorio
 
         public IEnumerable<Linha> ListasLinhasFatura(Guid id)
         {
-            return _ctx.Linhas.Where(i => i.FaturaId == id).ToList();
+            return _ctx.Linhas.Where(i => i.faturaId == id).ToList();
         }
 
         public IEnumerable<Transacao> ListarTransacoes()
@@ -187,7 +187,7 @@ namespace Faturas.Repositorio
             bank.saldo = bank.saldo + pagamento.ValorPago;
             if(pagamento.FaturaId != null){
                Fatura fat =  _ctx.Faturas.Find(pagamento.FaturaId);
-               fat.ValorPago = fat.ValorPago + pagamento.ValorPago;
+               fat.valorPago = fat.valorPago + pagamento.ValorPago;
             }
 
             _ctx.Pagamentos.Add(pagamento);

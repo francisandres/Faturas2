@@ -11,19 +11,19 @@ namespace Faturas.Entidades
     public class Fatura
     {
         [Key]
-        public Guid? FaturaId { get; set; }
+        public Guid? faturaId { get; set; }
 
        
-        public virtual Cliente Cliente { get; set; }
+        public virtual Cliente cliente { get; set; }
         
-        public Guid ClienteId { get; set; }
+        public Guid clienteId { get; set; }
         
-        public string EstadodaFatura { get; set; }
-        public string Nome { get; set; }
+        public string estadoDaFatura { get; set; }
+        public string nome { get; set; }
 
        
-        public decimal TotalFatura { get; set; }
-        public decimal ValorPago { get; set; }
+        public decimal totalFatura { get; set; }
+        public decimal valorPago { get; set; }
 
         public  ICollection<Linha> Linha { get; set; }
     }

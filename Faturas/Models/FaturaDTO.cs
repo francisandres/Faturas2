@@ -9,12 +9,12 @@ namespace Faturas.Models
     public class FaturaDTO
     {
         public Guid FaturaId { get; set; }
-        public Guid ClienteId { get; set; }
+        public Guid clienteId { get; set; }
 
-        public string Nome { get; set; }
-        public string EstadodaFatura { get; set; }
-        public decimal TotalFatura { get; set; }
-        public decimal ValorPago { get; set; }
+        public string nome { get; set; }
+        public string estadoDaFatura { get; set; }
+        public decimal totalFatura { get; set; }
+        public decimal valorPago { get; set; }
         public ICollection<LinhaDTO> LinhaDTO { get; set; }
        
        

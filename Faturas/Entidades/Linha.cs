@@ -10,20 +10,20 @@ namespace Faturas.Entidades
     public class Linha
     {
         [Key]
-        public Guid? LinhaId { get; set; }
-        public decimal PrecoVenda { get; set; }
-        public int Quantidade { get; set; }
-        public decimal TotalLinha { get; set; }
+        public Guid? linhaId { get; set; }
+        public decimal precoVenda { get; set; }
+        public int quantidade { get; set; }
+        public decimal totalLinha { get; set; }
 
        
-        public virtual Fatura Fatura { get; set; }
+        public virtual Fatura fatura { get; set; }
         [ForeignKey("Fatura")]
-        public Guid FaturaId { get; set; }
+        public Guid faturaId { get; set; }
 
         
-        public virtual Produto Produto { get; set; }
+        public virtual Produto produto { get; set; }
         [ForeignKey("Produto")]
-        public Guid ProdutoId { get; set; }
+        public Guid produtoId { get; set; }
 
 
     }

@@ -7,12 +7,12 @@ namespace Faturas.Models
 {
     public class LinhaDTO
     {
-        public Guid LinhaId { get; set; }
-        public decimal PrecoVenda { get; set; }
-        public int Quantidade { get; set; }
-        public decimal TotalLinha { get; set; }
-        public Guid FaturaId { get; set; }
-        public Guid ProdutoId { get; set; }
+        public Guid linhaId { get; set; }
+        public decimal precoVenda { get; set; }
+        public int quantidade { get; set; }
+        public decimal totalLinha { get; set; }
+        public Guid faturaId { get; set; }
+        public Guid produtoId { get; set; }
 
 
     }
