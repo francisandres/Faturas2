@@ -67,6 +67,7 @@ namespace Faturas
                 cfg.CreateMap<Entidades.ContaBancaria, Models.ContaBancariaDTO>();
                 cfg.CreateMap<Entidades.MovimentoBancario, Models.MovimentoBancarioDTO>();
                 cfg.CreateMap<Entidades.ReceitaOrcamento, Models.ReceitaOrcamentoDTO>();
+                cfg.CreateMap<Entidades.Funcionario, Models.FuncionarioDTO>();
 
             });
 

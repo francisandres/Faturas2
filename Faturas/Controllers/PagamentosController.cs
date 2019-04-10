@@ -14,7 +14,7 @@ namespace Faturas.Controllers
 {
     [Produces("application/json")]
     [Route("api/pagamento")]
-    public class PagamentosController : Controller
+    public class PagamentosController : ControllerBase
     {
         private IFaturasRepositorio _repo;
 

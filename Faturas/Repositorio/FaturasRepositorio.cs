@@ -240,5 +240,20 @@ namespace Faturas.Repositorio
             _ctx.MovimentosBancarios.Add(movbank);
         }
 
+        public IEnumerable<Funcionario> ListarFuncionarios()
+        {
+            return _ctx.Funcionarios.ToList();
+        }
+
+        public Funcionario ObterFuncionario(Guid id)
+        {
+            return _ctx.Funcionarios.Find(id);
+        }
+
+        public void AddFuncionario(Funcionario funcionario)
+        {
+            _ctx.Funcionarios.Add(funcionario);
+            _ctx.SaveChanges();
+        }
     }
 }

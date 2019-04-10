@@ -43,5 +43,9 @@ namespace Faturas.Repositorio
         IEnumerable<MovimentoBancario> ListarMovimentosBancarios();
         MovimentoBancario ObterMovimentoBancarioPorId(Guid id);
         void AddMovimentoBancario(MovimentoBancario movbank);
+
+        IEnumerable<Funcionario> ListarFuncionarios();
+        Funcionario ObterFuncionario(Guid id);
+        void AddFuncionario(Funcionario funcionario);
     }
 }

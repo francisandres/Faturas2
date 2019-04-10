@@ -23,6 +23,8 @@ namespace Faturas.Data
         public DbSet<ContaBancaria> ContasBancarias { get; set; }
         public DbSet<ReceitaOrcamento> ReceitaOrcamentos { get; set; }
         public DbSet<CustoOrcamento> CustoOrcamentos { get; set; }
+        public DbSet<Funcionario> Funcionarios { get; set; }
+        public DbSet<Vencimento> Vencimentos { get; set; }
 
 
 
